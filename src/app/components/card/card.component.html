@@ -1,1 +1,103 @@
-<p>card works!</p>
+<div class="card">
+  <div class="card-header">
+    <h2 class="card-title">Nomenclature Legal Form</h2>
+    <fa-icon class="icon-cancel" [icon]="faTimes" size="2xl"></fa-icon>
+  </div>
+  <div class="card-body">
+    <form class="card-form">
+      <div class="card-form-inputs">
+        <div class="form-group">
+          <label for="legal-form-bl">Legal Form</label>
+          <textarea
+            class="input-short"
+            name="legal-form-bl"
+            id="legal-form-bl"
+            maxlength="128"
+          ></textarea>
+        </div>
+        <div class="form-group">
+          <label for="legal-form-description-bl"
+            >Legal Form full description</label
+          >
+          <textarea
+            class="input-long"
+            name="legal-form-description-bl"
+            id="legal-form-description-bl"
+            maxlength="128"
+          ></textarea>
+        </div>
+      </div>
+      <div class="card-form-inputs">
+        <div class="form-group">
+          <label for="legal-form-full-description-en"
+            >Legal Form full description</label
+          >
+          <textarea
+            class="input-short"
+            name="legal-form-full-description-en"
+            id="legal-form-full-description-en"
+            maxlength="128"
+          ></textarea>
+        </div>
+        <div class="form-group">
+          <label for="legal-form-description-transliterated-en"
+            >Legal Form full description(transliterated)</label
+          >
+          <textarea
+            class="input-long"
+            name="legal-form-description-transliterated-en"
+            id="legal-form-description-transliterated-en"
+            maxlength="128"
+          ></textarea>
+        </div>
+      </div>
+
+      <button class="btn-delete-input">
+        <fa-icon [icon]="faMinus" size="sm"></fa-icon>
+      </button>
+
+      <div class="card-form-inputs">
+        <div class="form-group">
+          <label for="legal-form-bl">Legal Form</label>
+          <textarea
+            class="input-short"
+            name="legal-form-bl"
+            id="legal-form-bl"
+            maxlength="128"
+          ></textarea>
+        </div>
+        <div class="form-group">
+          <label for="legal-form-description-bl"
+            >Legal Form full description</label
+          >
+          <textarea
+            class="input-long"
+            name="legal-form-description-bl"
+            id="legal-form-description-bl"
+            maxlength="128"
+          ></textarea>
+        </div>
+      </div>
+
+      <button class="btn-add-input">
+        <fa-icon [icon]="faPlus" size="lg"></fa-icon>
+      </button>
+    </form>
+  </div>
+  <div class="card-buttons">
+    <div class="checkboxes">
+      <div class="checkbox-group">
+        <input type="checkbox" name="inactive" id="inactive" />
+        <label for="inactive">Inactive</label>
+      </div>
+      <div class="checkbox-group">
+        <input type="checkbox" name="default" id="default" />
+        <label for="default">Default</label>
+      </div>
+    </div>
+    <div class="save-cancel-buttons">
+      <button class="btn-save">Save</button>
+      <button class="btn-cancel">Cancel</button>
+    </div>
+  </div>
+</div>
