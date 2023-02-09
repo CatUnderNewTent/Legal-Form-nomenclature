@@ -91,30 +91,30 @@
   filter: brightness(99%);
 }
 
+.btn-delete-input,
+.btn-add-input {
+  color: rgb(255, 255, 255);
+  border: none;
+  align-self: flex-end;
+  margin: 0 20px;
+  cursor: pointer;
+}
+
 .btn-delete-input {
   width: 20px;
   height: 20px;
   background-color: rgb(255, 101, 101);
-  color: rgb(255, 255, 255);
-  border: none;
   border-radius: 50%;
-  align-self: flex-end;
-  margin: 0 20px;
-  cursor: pointer;
 }
 
 .btn-add-input {
   width: 30px;
   height: 30px;
   background-color: rgb(0, 111, 186);
-  color: rgb(255, 255, 255);
-  border: none;
   border-radius: 5px;
-  align-self: flex-end;
-  margin: 0 20px;
-  cursor: pointer;
 }
 
+.btn-delete-input:active,
 .btn-add-input:active {
   transform: translateY(2px);
 }
