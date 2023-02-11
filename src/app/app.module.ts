@@ -5,16 +5,12 @@ import { AppComponent } from './app.component';
 import { CardComponent } from './components/card/card.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 @NgModule({
-  declarations: [
-    AppComponent,
-    CardComponent
-  ],
-  imports: [
-    BrowserModule,
-    FontAwesomeModule
-  ],
+  declarations: [AppComponent, CardComponent],
+  imports: [BrowserModule, FontAwesomeModule, FormsModule, ReactiveFormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

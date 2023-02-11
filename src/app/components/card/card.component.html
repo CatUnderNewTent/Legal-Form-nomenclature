@@ -4,7 +4,7 @@
     <fa-icon class="icon-cancel" [icon]="faTimes" size="2xl"></fa-icon>
   </div>
   <div class="card-body">
-    <form class="card-form">
+    <form class="card-form" [formGroup]="textareaValues">
       <div class="card-form-inputs">
         <div class="form-group">
           <label for="legal-form-bl">Legal Form</label>
@@ -13,6 +13,7 @@
             name="legal-form-bl"
             id="legal-form-bl"
             maxlength="128"
+            formControlName="legal-form-bl"
           ></textarea>
         </div>
         <div class="form-group">
@@ -24,6 +25,7 @@
             name="legal-form-description-bl"
             id="legal-form-description-bl"
             maxlength="128"
+            formControlName="legal-form-description-bl"
           ></textarea>
         </div>
       </div>
@@ -96,8 +98,8 @@
       </div>
     </div>
     <div class="save-cancel-buttons">
-      <button class="btn-save">Save</button>
-      <button class="btn-cancel">Cancel</button>
+      <button class="btn-save" (click)="onGetValues()">Save</button>
+      <button class="btn-cancel" (click)="onCancel()">Cancel</button>
     </div>
   </div>
 </div>
