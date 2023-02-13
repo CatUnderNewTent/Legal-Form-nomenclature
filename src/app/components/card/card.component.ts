@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import {
   FormBuilder,
@@ -11,12 +11,21 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { faMinus } from '@fortawesome/free-solid-svg-icons';
 
+interface NomenclatureItem {
+  legalForm: string;
+  legalFormFullDescription: string;
+  legalFormTransliterated: string;
+  legalFormFullDescriptionTransliterated: string;
+  isDefault: boolean;
+  isActive: boolean;
+}
+
 @Component({
   selector: 'app-card',
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.css'],
 })
-export class CardComponent {
+export class CardComponent implements OnInit {
   faTimes = faTimes;
   faPlus = faPlus;
   faMinus = faMinus;
@@ -40,10 +49,6 @@ export class CardComponent {
     });
   }
 
-  onCancel() {
-    this.textareaValues.reset();
-  }
-
   onGetValues() {
     console.log(this.textareaValues.value);
     console.log(this.textareaValues.get('legal-form-description-bl')!.value);
@@ -53,5 +58,9 @@ export class CardComponent {
     this.textareaValues.valueChanges.subscribe((data) => {
       console.log(data);
     });
+  }
+
+  onCancel() {
+    this.textareaValues.reset();
   }
 }
