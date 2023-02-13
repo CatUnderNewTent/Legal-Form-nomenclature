@@ -29,7 +29,6 @@ export class CardComponent implements OnInit {
   constructor(private formBuilder: FormBuilder) {}
 
   nomenclatureItems: NomenclatureItem[] = [];
-  successMessage!: string;
   item!: NomenclatureItem;
 
   ngOnInit(): void {
@@ -64,6 +63,12 @@ export class CardComponent implements OnInit {
       legalFormTransliterated: '',
       legalFormFullDescriptionTransliterated: '',
     });
+  }
+
+  removeForm(item: NomenclatureItem) {
+    this.nomenclatureItems = this.nomenclatureItems.filter((i) =>
+      console.log(i)
+    );
   }
 
   onGetValues() {

@@ -5,7 +5,7 @@
   </div>
   <div class="card-body">
     <form class="card-form" [formGroup]="textareaValues">
-      <div class="card-form-inputs" *ngFor="let item of nomenclatureItems">
+      <div class="card-form-inputs">
         <div class="form-group">
           <label for="legal-form-bl">Legal Form</label>
           <textarea
@@ -29,7 +29,7 @@
           ></textarea>
         </div>
       </div>
-      <div class="card-form-inputs">
+      <div class="card-form-inputs" *ngFor="let item of nomenclatureItems">
         <div class="form-group">
           <label for="legal-form-full-description-en"
             >Legal Form full description</label
@@ -56,7 +56,7 @@
         </div>
       </div>
 
-      <button class="btn-delete-input">-</button>
+      <button class="btn-delete-input" (click)="removeForm(item)">-</button>
 
       <button class="btn-add-input" (click)="addNewForm()">+</button>
     </form>
