@@ -8,16 +8,12 @@ import {
 } from '@angular/forms';
 
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
-import { faPlus } from '@fortawesome/free-solid-svg-icons';
-import { faMinus } from '@fortawesome/free-solid-svg-icons';
 
 interface NomenclatureItem {
   legalForm: string;
   legalFormFullDescription: string;
   legalFormTransliterated: string;
   legalFormFullDescriptionTransliterated: string;
-  isDefault: boolean;
-  isActive: boolean;
 }
 
 @Component({
@@ -27,12 +23,14 @@ interface NomenclatureItem {
 })
 export class CardComponent implements OnInit {
   faTimes = faTimes;
-  faPlus = faPlus;
-  faMinus = faMinus;
 
   textareaValues!: FormGroup;
 
   constructor(private formBuilder: FormBuilder) {}
+
+  nomenclatureItems: NomenclatureItem[] = [];
+  successMessage!: string;
+  item!: NomenclatureItem;
 
   ngOnInit(): void {
     // this.textareaValues = new FormGroup({
@@ -46,6 +44,25 @@ export class CardComponent implements OnInit {
         '',
         Validators.maxLength(128)
       ),
+      'legal-form-full-description-en': new FormControl(
+        '',
+        Validators.maxLength(128)
+      ),
+      'legal-form-description-transliterated-en': new FormControl(
+        '',
+        Validators.maxLength(128)
+      ),
+    });
+
+    this.addNewForm();
+  }
+
+  addNewForm() {
+    this.nomenclatureItems.push({
+      legalForm: '',
+      legalFormFullDescription: '',
+      legalFormTransliterated: '',
+      legalFormFullDescriptionTransliterated: '',
     });
   }
 

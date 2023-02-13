@@ -5,7 +5,7 @@
   </div>
   <div class="card-body">
     <form class="card-form" [formGroup]="textareaValues">
-      <div class="card-form-inputs">
+      <div class="card-form-inputs" *ngFor="let item of nomenclatureItems">
         <div class="form-group">
           <label for="legal-form-bl">Legal Form</label>
           <textarea
@@ -39,6 +39,7 @@
             name="legal-form-full-description-en"
             id="legal-form-full-description-en"
             maxlength="128"
+            formControlName="legal-form-full-description-en"
           ></textarea>
         </div>
         <div class="form-group">
@@ -50,40 +51,14 @@
             name="legal-form-description-transliterated-en"
             id="legal-form-description-transliterated-en"
             maxlength="128"
+            formControlName="legal-form-description-transliterated-en"
           ></textarea>
         </div>
       </div>
 
-      <button class="btn-delete-input">
-        <fa-icon [icon]="faMinus" size="sm"></fa-icon>
-      </button>
+      <button class="btn-delete-input">-</button>
 
-      <div class="card-form-inputs">
-        <div class="form-group">
-          <label for="legal-form-bl">Legal Form</label>
-          <textarea
-            class="input-short"
-            name="legal-form-bl"
-            id="legal-form-bl"
-            maxlength="128"
-          ></textarea>
-        </div>
-        <div class="form-group">
-          <label for="legal-form-description-bl"
-            >Legal Form full description</label
-          >
-          <textarea
-            class="input-long"
-            name="legal-form-description-bl"
-            id="legal-form-description-bl"
-            maxlength="128"
-          ></textarea>
-        </div>
-      </div>
-
-      <button class="btn-add-input">
-        <fa-icon [icon]="faPlus" size="lg"></fa-icon>
-      </button>
+      <button class="btn-add-input" (click)="addNewForm()">+</button>
     </form>
   </div>
   <div class="card-buttons">
